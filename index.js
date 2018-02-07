@@ -10,8 +10,7 @@ const href = 'https://github.com/digitaldrummerj/' + repoName + '/archive';
 const zipFile = 'master.zip';
 const source = `${href}/${zipFile}`;
 const extractEntryTo = `${repoName}-master/`;
-
-const outputDir = './';
+const outputDir = `./${repoName}-master/`;
 const fileName = url
   .parse(source)
   .pathname.split('/')
@@ -30,7 +29,9 @@ request
   })
   .pipe(fs.createWriteStream(zipFile))
   .on('finish', function() {
-    console.log('finish');
+    console.log('finished dowloading');
     var zip = new AdmZip(zipFile);
+    console.log('start unzip');
     zip.extractEntryTo(extractEntryTo, outputDir, false, true);
+    console.log('finished unzip');
   });
