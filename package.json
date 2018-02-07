@@ -18,7 +18,6 @@
   "homepage": "https://github.com/digitaldrummerj/node-zip-download-sample#readme",
   "dependencies": {
     "adm-zip": "^0.4.7",
-    "superagent": "^3.8.2",
-    "url": "^0.11.0"
+    "superagent": "^3.8.2"
   }
 }
